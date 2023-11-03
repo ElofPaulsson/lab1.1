@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Bil {
+public class Bil implements Movable {
     public static void main(String[] args){
 
     }
@@ -12,22 +12,20 @@ public class Bil {
     public String modelName; // The car model name
 
 
-    public Color getColor(){
-        return color;
-    }
+    private Color getColor(){return color;}
 
-    public void setColor(Color clr){
+    private void setColor(Color clr){
         color = clr;
     }
 
-    public int getNrDoors(){
+    private int getNrDoors(){
         return nrDoors;
     }
-    public double getEnginePower(){
+    private double getEnginePower(){
         return enginePower;
     }
 
-    public void startEngine(){
+    private void startEngine(){
         currentSpeed = 0.1;
     }
 
@@ -40,4 +38,19 @@ public class Bil {
     }
 
 
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void turnLeft() {
+        System.out.println("Hej");
+
+    }
+
+    @Override
+    public void turnRight() {
+
+    }
 }
