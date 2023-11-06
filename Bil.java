@@ -5,6 +5,10 @@ public class Bil implements Movable {
 
     }
 
+    public int Dir = 90;
+    public double Xpos = 0;
+    public double Ypos = 0;
+
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
@@ -40,17 +44,34 @@ public class Bil implements Movable {
 
     @Override
     public void move() {
+        int value = (Dir % 360);
+        value = value / 90;
+        switch (value){
+            case 0:
+                Xpos += getCurrentSpeed();
+                break;
+            case 1:
+                Ypos += getCurrentSpeed();
+                break;
+            case 2:
+                Xpos -= getCurrentSpeed();
+                break;
+            case 3:
+                Ypos -= getCurrentSpeed();
+                break;
+        }
 
     }
 
     @Override
     public void turnLeft() {
-        System.out.println("Hej");
+        Dir += 90;
 
     }
 
     @Override
     public void turnRight() {
+        Dir += 90;
 
     }
 }
